@@ -1,0 +1,36 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - source
+  schedule:
+    - cron: '0 8 * * *'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Tokyo'
+      BUNDLE_WITHOUT: development
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: mkdir
+        run: mkdir public
+
+      - name: Build
+        run: bundle exec ruby app.rb
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
