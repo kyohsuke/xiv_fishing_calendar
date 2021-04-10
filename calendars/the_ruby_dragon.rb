@@ -13,7 +13,7 @@ module Calendar
     end
 
     def attempt?(weather)
-      weather.start_hour.zero? && weather.prev.weather == :thunder
+      return weather if weather.start_hour.zero? && weather.prev.weather == :thunder
     end
   end
 end

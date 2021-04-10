@@ -13,7 +13,7 @@ module Calendar
     end
 
     def attempt?(weather)
-      weather.start_hour.zero?
+      return weather if weather.start_hour.zero?
     end
 
     def start_offset(_)
