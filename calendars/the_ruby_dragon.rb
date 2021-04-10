@@ -1,9 +1,19 @@
 module Calendar
   class TheRubyDragon < Base
-    def attempts
-      @attempts ||= EorzeaWeather.find(:clouds, :the_ruby_sea, max_attempts: ATTEMPTS, time: start_time(time: now)).select do |w|
-        w.start_hour.zero? && w.prev.weather == :thunder
-      end
+    def event_title
+      '紅龍'
+    end
+
+    def area
+      :the_ruby_sea
+    end
+
+    def weather
+      :clouds
+    end
+
+    def attempt?(weather)
+      weather.start_hour.zero? && weather.prev.weather == :thunder
     end
   end
 end
