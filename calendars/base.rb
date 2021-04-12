@@ -42,9 +42,11 @@ module Calendar
     end
 
     def weathers
-      @weathers ||= EorzeaWeather.find(weather, area, max_attempts: ATTEMPTS, time: start_time(time: now)).map do |weather|
-        attempt?(weather)
-      end.compact
+      @weathers ||= EorzeaWeather
+        .find(weather, area, max_attempts: ATTEMPTS, time: start_time(time: now))
+        .map { |weather| attempt?(weather) }
+        .uniq { |weather| weather&.start_time&.to_s }
+        .compact
     end
 
     def start_offset(_)
