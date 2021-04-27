@@ -3,15 +3,9 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require
 
-require_relative 'lib/calendar_builder'
-Dir.glob("#{__dir__}/calendars/*.rb").each do |calendar|
-  require calendar
-end
-
-Calendar::TheRubyDragon.new(timezone: 'Asia/Tokyo').then do |cal|
-  File.open('./public/the_ruby_dragon.ics', 'w').write(cal.generate)
-end
-
-Calendar::Charibenet.new(timezone: 'Asia/Tokyo').then do |cal|
-  File.open('./public/charibenet.ics', 'w').write(cal.generate(all_day: false))
+require_relative 'calendars'
+Calendar.classes.each do |cls|
+  cls.new(timezone: 'Asia/Tokyo').then do |cal|
+    File.open("./public/#{cls.name.demodulize.underscore}.ics", 'w').write(cal.generate)
+  end
 end
