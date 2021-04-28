@@ -3,7 +3,10 @@ require 'icalendar/tzinfo'
 require 'digest'
 
 class CalendarBuilder
+
   def initialize(title:, timezone: nil)
+    @logger = Logger.new($stdout)
+
     @ical = Icalendar::Calendar.new.tap do |cal|
       cal.append_custom_property('X-WR-CALNAME;VALUE=TEXT', title)
     end
@@ -26,7 +29,8 @@ class CalendarBuilder
 
   private
 
-  attr_reader :ical, :ical_timezone
+  attr_reader :ical, :ical_timezone, :logger
+
 
   def add_all_day_event(title:, start_date:)
     dtstart = start_date.to_datetime
@@ -39,6 +43,8 @@ class CalendarBuilder
   end
 
   def add_event(title:, start_date:, end_date:)
+    puts("#{title}, #{start_date.to_s(:db)} - #{end_date.to_s(:db)}") && return if ENV['DEBUG']
+
     dtstart = start_date.to_datetime
     dtend = end_date.to_datetime
 
