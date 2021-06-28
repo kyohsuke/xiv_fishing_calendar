@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/kyohsuke/eorzea_weather
+  revision: 284ff2d7f967b91ec91842c99c7554a604f7e3ab
+  branch: shadowbringers
+  specs:
+    eorzea_weather (0.1.1)
+      eorzea_time (>= 0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -13,8 +21,6 @@ GEM
     concurrent-ruby (1.1.8)
     e2mmap (0.1.0)
     eorzea_time (0.2.0)
-    eorzea_weather (0.1.1)
-      eorzea_time (>= 0.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     icalendar (2.7.1)
@@ -82,7 +88,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 6.1)
-  eorzea_weather (~> 0.1.1)
+  eorzea_weather!
   icalendar (~> 2.7.1)
   rubocop
   rubocop-performance
