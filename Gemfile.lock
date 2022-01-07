@@ -9,7 +9,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4.1)
+    activesupport (6.1.4.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -19,10 +19,10 @@ GEM
     backport (1.2.0)
     benchmark (0.2.0)
     concurrent-ruby (1.1.9)
-    diff-lcs (1.4.4)
+    diff-lcs (1.5.0)
     e2mmap (0.1.0)
     eorzea_time (0.2.0)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     icalendar (2.7.1)
       ice_cube (~> 0.16)
@@ -32,36 +32,36 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    minitest (5.14.4)
-    nokogiri (1.12.5-x86_64-darwin)
+    minitest (5.15.0)
+    nokogiri (1.13.0-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
+    nokogiri (1.13.0-x86_64-linux)
       racc (~> 1.4)
     parallel (1.21.0)
-    parser (3.0.2.0)
+    parser (3.1.0.0)
       ast (~> 2.4.1)
     racc (1.6.0)
     rainbow (3.0.0)
-    regexp_parser (2.1.1)
-    reverse_markdown (2.0.0)
+    regexp_parser (2.2.0)
+    reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
-    rubocop (1.22.2)
+    rubocop (1.24.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      rubocop-ast (>= 1.15.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.12.0)
+    rubocop-ast (1.15.1)
       parser (>= 3.0.1.1)
-    rubocop-performance (1.11.5)
+    rubocop-performance (1.13.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
-    solargraph (0.44.0)
+    solargraph (0.44.2)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
@@ -76,13 +76,15 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    thor (1.1.0)
+    thor (1.2.1)
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
-    yard (0.9.26)
-    zeitwerk (2.5.1)
+    webrick (1.7.0)
+    yard (0.9.27)
+      webrick (~> 1.7.0)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   x86_64-darwin-20
@@ -97,4 +99,4 @@ DEPENDENCIES
   solargraph
 
 BUNDLED WITH
-   2.2.29
+   2.3.4
