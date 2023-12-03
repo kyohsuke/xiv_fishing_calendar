@@ -13,7 +13,8 @@ jobs:
       TZ: 'Asia/Tokyo'
       BUNDLE_WITHOUT: development
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -22,7 +23,7 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: mkdir
+      - name: Mkdir
         run: mkdir public
 
       - name: Build
