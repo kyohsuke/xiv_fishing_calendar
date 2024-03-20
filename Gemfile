@@ -8,9 +8,3 @@ gem 'activesupport', '~> 6.1'
 gem 'eorzea_weather', github: 'kyohsuke/eorzea_weather', branch: 'shadowbringers'
 # gem 'eorzea_weather', '~> 0.1.1'
 gem 'icalendar', '~> 2.7.1'
-
-group :development do
-  gem 'rubocop'
-  gem 'rubocop-performance'
-  gem 'solargraph'
-end
